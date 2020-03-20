@@ -35,9 +35,9 @@ class wikifinder:
 
                 image_url = 'https:' + image_url
                 print("Image Found")
-                print(image_url) #--> just to show image url
-                #time.sleep(1)
-                #wikifinder.imagedownload(image_url)
+                #print(image_url) #--> just to show image url
+                time.sleep(1)
+                wikifinder.imagedownload(image_url)
 
             except AttributeError:
                 print("No Image Located")

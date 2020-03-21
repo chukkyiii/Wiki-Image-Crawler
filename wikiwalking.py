@@ -1,26 +1,22 @@
 import requests
 from bs4 import BeautifulSoup
-import webbrowser
-import shutil
 import urllib
 import time
+import keyarchivemanager as kam
 
+kn = kam.kam
 class wikifinder:
 
-    def imagedownload(image_url, ):
-        a = 0
-        imageresp = requests.get(image_url, stream=True)
-        local_file = open(str(a) + '.jpg', 'wb')
-        imageresp.raw.decode_content = True
-        shutil.copyfileobj(imageresp.raw, local_file)
-        a = int(a)
-        a += 1
-        del imageresp
+    def imagedownload(image_url, key):
+        filepath = "/Users/jessegodwin_0333/Downloads/Computer science/pythonproject/imagearchive/"
+        filename = kn.knm(key) + ".jpg"
+        full_path = filepath + filename
+        imgreq = urllib.request.urlretrieve(image_url, full_path)
 
 
     def wikiwalk():
         url = 'https://en.wikipedia.org/wiki/Special:Random'
-
+        key = 0
         while True:
             try:
                 wiki = requests.get(url)
@@ -32,9 +28,9 @@ class wikifinder:
 
                 image_url = 'https:' + image_url
                 print("Image Found")
+                key += 1
                 #print(image_url) #--> just to show image url
-                time.sleep(1)
-                wikifinder.imagedownload(image_url)
+                wikifinder.imagedownload(image_url, key)
 
             except AttributeError:
                 print("No Image Located")

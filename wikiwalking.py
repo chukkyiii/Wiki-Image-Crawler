@@ -7,9 +7,9 @@ import keyarchivemanager as kam
 kn = kam.kam
 class wikifinder:
 
-    def imagedownload(image_url, key):
+    def wikiimagedownload(image_url, key):
         filepath = "/Users/jessegodwin_0333/Downloads/Computer science/pythonproject/imagearchive/"
-        filename = kn.knm(key) + ".jpg"
+        filename = kn.knm(key) + "w" + ".jpg"
         full_path = filepath + filename
         imgreq = urllib.request.urlretrieve(image_url, full_path)
 
@@ -30,7 +30,7 @@ class wikifinder:
                 print("Image Found")
                 key += 1
                 #print(image_url) #--> just to show image url
-                wikifinder.imagedownload(image_url, key)
+                wikifinder.wikiimagedownload(image_url, key)
 
             except AttributeError:
                 print("No Image Located")

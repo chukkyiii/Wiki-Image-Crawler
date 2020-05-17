@@ -8,7 +8,7 @@ kn = kam.kam
 class wikifinder:
 
     def wikiimagedownload(image_url, key):
-        filepath = "/Users/jessegodwin_0333/Downloads/Computer science/pythonproject/imagearchive/"
+        filepath = "./imagearchive/"
         filename = kn.knm(key) + "w" + ".jpg"
         full_path = filepath + filename
         imgreq = urllib.request.urlretrieve(image_url, full_path)

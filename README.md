@@ -1,4 +1,4 @@
-# imagive
-Automated program which surfs through websites which contain images, in which it can collect and archive these images.
+# Wiki Image Scraper
+Automated program which surfs through wikipedia articles which contain images, in which it can collect and archive these images.
 
-[![Run on Repl.it](https://repl.it/badge/github/schwarzercm/imagive)](https://repl.it/github/schwarzercm/imagive)
+
